@@ -1,0 +1,4 @@
+CREATE TABLE test_table AS
+SELECT LEVEL id, SYSDATE+DBMS_RANDOM.VALUE(-1000, 1000) date_value, DBMS_RANDOM.string('A', 20) text_value
+FROM dual
+CONNECT BY LEVEL <= 100000
